@@ -1,4 +1,3 @@
-import "./App.css";
 import { lazy, Suspense } from "react";
 import { Route, Switch } from "react-router-dom";
 import * as ROUTES from './constants/routes'
