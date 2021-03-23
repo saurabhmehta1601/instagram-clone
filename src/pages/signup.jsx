@@ -1,20 +1,22 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory,Link } from "react-router-dom";
-import {SIGN_UP,DASHBOARD} from '../constants/routes' 
+import {DASHBOARD, LOGIN} from '../constants/routes' 
 
 import FirebaseContext from "../context/firebase";
 
-const Login = () => {
+const Signup = () => {
   const history = useHistory();
   const { firebase } = useContext(FirebaseContext);
 
+  const [fullName, setFullName] = useState('')
+  const [username, setUsername] = useState('')
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const [error, setError] = useState("");
   const isInvalid = password === "" || email === "";
 
-  const handleLogin = async (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault()
     
     try{
@@ -28,7 +30,7 @@ const Login = () => {
   }
 
   useEffect(() => {
-    document.title = "Login | Instagram";
+    document.title = "Signup | Instagram";
 
   }, []);
 
@@ -48,7 +50,7 @@ const Login = () => {
         </h1>
         {error && <p className="mb-4 text-xs text-red-primary"> {error} </p>}
 
-        <form method="POST" onSubmit={handleLogin} className="p-4 ">
+        <form method="POST" onSubmit={handleSignup} className="p-4 ">
           <input
             type="email"
             value={email}
@@ -56,8 +58,25 @@ const Login = () => {
             aria-label="Enter your email address"
             placeholder="Email Address"
             className="text-sm text-grey-base w-full py-5 px-4 mr-3 h-2 border border-gray-primary rounded mb-4"
-          />
+            />    
 
+            <input
+            type="text"
+            value={fullName}
+            onChange={e => setFullName(e.target.value)}
+            aria-label="Enter your full name"
+            placeholder="Full name"
+            className="text-sm text-grey-base w-full py-5 px-4 mr-3 h-2 border border-gray-primary rounded mb-4"
+            />
+
+            <input
+            type="text"
+            value={username}
+            onChange={e => setUsername(e.target.value)}
+            aria-label="Enter your user name"
+            placeholder="User name"
+            className="text-sm text-grey-base w-full py-5 px-4 mr-3 h-2 border border-gray-primary rounded mb-4"
+          />
            <input
             type="password"
             value={password}
@@ -73,17 +92,17 @@ const Login = () => {
           className={
               `bg-blue-medium w-full text-white rounded h-8 font-bold ${isInvalid && "opacity-50"}`}
           >
-            Log In 
+            Sign up
         </button>
         </form>
       </div>
       <div className="flex justify-center flex-col items-center rounded bg-white w-full p-4 border border-gray-primary">
-          <p className="text-sm">Don't have an accound yet? 
-          <Link to={SIGN_UP} className="font-bold text-blue-medium "> Sign up</Link> </p>
+          <p className="text-sm">Already have an accound ? 
+          <Link to={LOGIN} className="font-bold text-blue-medium "> Login </Link> </p>
       </div>
     </div>
     </div>
   );
 };
 
-export default Login;
+export default Signup;

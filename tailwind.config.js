@@ -21,9 +21,7 @@ module.exports = {
                 primary:"#dbdbdb"
             },
             red:{
-                primary:{
-                    primary:"#ed4956"
-                }
+                primary: "#ed4956"
             }
         }
     }
