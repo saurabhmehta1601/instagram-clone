@@ -18,12 +18,12 @@ const Login = () => {
     e.preventDefault()
     
     try{
-    await firebase.auth().signInWithEmailAndPassword(email,password)
-    history.push(DASHBOARD)
+        await firebase.auth().signInWithEmailAndPassword(email,password)
+        history.push(DASHBOARD)
     }catch(error){
-      setEmail('')
-      setPassword('')
-      setError(error.message)
+        setEmail('')
+        setPassword('')
+        setError(error.message)
     }
   }
 
