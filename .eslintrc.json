@@ -16,6 +16,7 @@
   "rules": {
     "react/no-unescaped-entities": "warn",
     "react/react-in-jsx-scope": "off",
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "no-console":"warn"
   }
 }

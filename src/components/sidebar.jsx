@@ -1,7 +1,10 @@
-import React from 'react'
+import useUser from "../hooks/use-user"
+
 
 const Sidebar = () => {
-    return (
+    const {user : {fullName,username,userId}} =useUser()
+    
+     return (
         <div>Thsis is sidebar
             
         </div>
