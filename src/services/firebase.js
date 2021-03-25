@@ -1,4 +1,4 @@
-import { firebase, FieldValue } from "../lib/firebase";
+import { firebase } from "../lib/firebase";
 
 export const doesUsernameExists = async (username) => {
   const result= await firebase

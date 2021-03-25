@@ -78,7 +78,7 @@ const Login = () => {
         </form>
       </div>
       <div className="flex justify-center flex-col items-center rounded bg-white w-full p-4 border border-gray-primary">
-          <p className="text-sm">Don't have an accound yet? 
+          <p className="text-sm">Don&#39;t have an accound yet? 
           <Link to={SIGN_UP} className="font-bold text-blue-medium "> Sign up</Link> </p>
       </div>
     </div>

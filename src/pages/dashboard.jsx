@@ -10,7 +10,13 @@ const Dashboard = () => {
     })
     return (
         <div>
-            <Header></Header>
+            <div className="bg-gray-background">
+            <Header />
+            <div className="grid grid-cols-3 gap-4 justify">
+                <Timeline />
+                <Sidebar />
+            </div>
+            </div>
             <Timeline />
             <Sidebar></Sidebar>
         </div>
